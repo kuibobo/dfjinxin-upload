@@ -59,9 +59,11 @@
                             <li class="nav-item">
                                 <a href="${request.contextPath}/attachment/list" class="nav-link active"><i class="fe fe-home"></i> 首页</a>
                             </li>
+                            <#if user.isAdmin()>
                             <li class="nav-item">
                                 <a href="${request.contextPath}/user/list" class="nav-link"><i class="fe fe-users"></i> 用户列表</a>
                             </li>
+                            </#if>
                         </ul>
                     </div>
                 </div>
