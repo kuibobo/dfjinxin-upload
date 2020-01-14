@@ -1,5 +1,6 @@
 package io.dfjinxin.modules.upload.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import io.dfjinxin.modules.upload.dao.IUserDao;
@@ -18,6 +19,11 @@ public class UserServiceImpl extends ServiceImpl<IUserDao, UserEntity> implement
     @Override
     public UserEntity getUser(Long userId) {
         return super.getById(userId);
+    }
+
+    @Override
+    public UserEntity getByName(String name) {
+        return super.getOne(new QueryWrapper<UserEntity>().eq("name", name));
     }
 
     @Override

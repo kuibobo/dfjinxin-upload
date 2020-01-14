@@ -1,9 +1,11 @@
 package io.dfjinxin.modules.upload.controller;
 
 import io.dfjinxin.modules.upload.entity.AttachmentEntity;
+import io.dfjinxin.modules.upload.entity.UserEntity;
 import io.dfjinxin.modules.upload.service.IAttachmentService;
 import io.dfjinxin.util.DataSet;
 import io.dfjinxin.util.R;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +23,10 @@ public class AttachmentController {
     @GetMapping("/list")
     public String list(Map<String, Object> models) {
         DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(1l, 1, 20);
+        UserEntity user = (UserEntity) SecurityUtils.getSubject().getPrincipal();
 
         models.put("datas", datas);
+        models.put("user", user);
         return "attachment/list";
     }
 
