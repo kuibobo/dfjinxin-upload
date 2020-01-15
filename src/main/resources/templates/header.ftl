@@ -31,7 +31,7 @@
         <div class="header py-4">
             <div class="container">
                 <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
+                    <a class="header-brand" href="${request.contextPath}/attachment/list">
                         <img src="${request.contextPath}/assets/tabler/images/tabler.svg" class="header-brand-img" alt="tabler logo">
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
@@ -43,6 +43,11 @@
                                   <small class="text-muted d-block mt-1"></small>
                                 </span>
                             </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="${request.contextPath}/logout">
+                                    <i class="dropdown-icon fe fe-log-out"></i> 注销
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,7 +64,7 @@
                             <li class="nav-item">
                                 <a href="${request.contextPath}/attachment/list" class="nav-link active"><i class="fe fe-home"></i> 首页</a>
                             </li>
-                            <#if user.isAdmin()>
+                            <#if user.getAdmin()>
                             <li class="nav-item">
                                 <a href="${request.contextPath}/user/list" class="nav-link"><i class="fe fe-users"></i> 用户列表</a>
                             </li>

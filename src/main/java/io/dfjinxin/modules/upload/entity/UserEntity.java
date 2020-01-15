@@ -19,7 +19,7 @@ public class UserEntity {
 
     private String name;
 
-    private boolean admin;
+    private Boolean admin;
 
     private String path;
 }

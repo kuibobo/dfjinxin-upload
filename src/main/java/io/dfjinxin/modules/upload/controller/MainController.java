@@ -3,6 +3,7 @@ package io.dfjinxin.modules.upload.controller;
 import io.dfjinxin.component.PortalFilter;
 import io.dfjinxin.config.SystemParams;
 import io.dfjinxin.modules.upload.entity.UserEntity;
+import io.dfjinxin.util.ShiroUtils;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,12 @@ public class MainController {
 
     @RequestMapping("logincas")
     public String logincas() {
+        return "redirect:" + systemParams.getPortalUrl();
+    }
+
+    @RequestMapping("logout")
+    public String logout() {
+        ShiroUtils.logout();
         return "redirect:" + systemParams.getPortalUrl();
     }
 

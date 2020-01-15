@@ -23,7 +23,13 @@
                 <tr>
                   <td>${user.id}</td>
                   <td>${user.name}</td>
-                  <td>${(user.path)!""}</td>
+                  <td>
+                    <#if user.path??>
+                      ${path}/${(user.path)!""}
+                    <#else>
+                      ${path}/${user.name}
+                    </#if>
+                  </td>
                   <th>
                     <a class="btn btn-primary btn-sm" href="${request.contextPath}/user/edit/${user.id}"><i class="fe fe-edit"></i> 设置</a>
                   </th>

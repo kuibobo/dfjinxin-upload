@@ -1,7 +1,9 @@
 package io.dfjinxin.component;
 
+import io.dfjinxin.config.SystemParams;
 import io.dfjinxin.util.CookieUtil;
 import io.dfjinxin.util.HttpServletUtil;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 
 import javax.servlet.http.Cookie;
@@ -44,6 +46,8 @@ public class WebFreeMarkerView extends FreeMarkerView {
 
     @Override
     protected void exposeHelpers(Map<String, Object> model, HttpServletRequest request) throws Exception {
+        AppPathProperties appPathProperties = BeanComponent.getBean(AppProperties.class).getPath();
+        model.put("path", appPathProperties.getWorkDir() + appPathProperties.getUpload());
         cleanNotices();
         super.exposeHelpers(model, request);
     }

@@ -10,7 +10,11 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">我的文件</h3>
+            <h3 class="card-title">我的文件路径 <#if user.path??>
+                ${path}/${(user.path)!""}
+              <#else>
+                ${path}/${user.name}
+              </#if></h3>
             <div class="card-options">
               <button class="btn btn-primary btn-sm" @click="showUploadDlg = true"><i class="fe fe-arrow-up"></i> 上传</button>
             </div>

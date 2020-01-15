@@ -36,7 +36,7 @@ spring:
 system-params:
   # cas登录服务地址
   cas_url: http://127.0.0.1:8080/cas/login?locale=zh_CN&service=http%3A%2F%2Flocalhost%3A8080%2Fportal%2Fcallback%3Fclient_name%3DCasClient
-  portal_url: http://127.0.0.1:8080/cas/logout?service=http%3A%2F%2Flocalhost%3A7202%2Fjx-etl%2F
+  portal_url: http://127.0.0.1:8080/cas/logout?service=http%3a%2f%2f127.0.0.1%3a8060%2f
   portal_app: 批量数据处理
   soap_url: http://127.0.0.1:18001/portal/intlDataSynchronizedService?wsdl
   cas_server_url_prefix: http://127.0.0.1:8080/cas
