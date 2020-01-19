@@ -9,4 +9,6 @@ public interface IAttachmentService {
     AttachmentEntity upload(MultipartFile file, String folder, Long userId, Long objectId);
 
     DataSet<AttachmentEntity> queryAttachments(Long userId, Integer pageIndex, Integer pageSize);
+
+    void remove(Long id);
 }

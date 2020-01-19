@@ -91,4 +91,10 @@ public class LocalFileHandler extends FileHandler {
             throw new ApplicationException(e.getMessage());
         }
     }
+
+    @Override
+    public boolean remove(String file) {
+        Path filePath = Paths.get(properties.getPath().getWorkDir(), properties.getPath().getUpload(), file);
+        return cn.hutool.core.io.FileUtil.del(filePath.toString());
+    }
 }

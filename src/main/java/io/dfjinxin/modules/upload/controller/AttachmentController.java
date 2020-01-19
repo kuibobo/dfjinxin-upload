@@ -1,5 +1,6 @@
 package io.dfjinxin.modules.upload.controller;
 
+import cn.hutool.core.io.FileUtil;
 import io.dfjinxin.modules.upload.entity.AttachmentEntity;
 import io.dfjinxin.modules.upload.entity.UserEntity;
 import io.dfjinxin.modules.upload.service.IAttachmentService;
@@ -22,8 +23,8 @@ public class AttachmentController {
 
     @GetMapping("/list")
     public String list(Map<String, Object> models) {
-        DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(1l, 1, 20);
         UserEntity user = (UserEntity) SecurityUtils.getSubject().getPrincipal();
+        DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(user.getId(), 1, 20);
 
         models.put("datas", datas);
         models.put("user", user);
@@ -42,5 +43,12 @@ public class AttachmentController {
         } else {
             return R.error();
         }
+    }
+
+    @GetMapping(value = "/remove/{id}")
+    @ResponseBody
+    public R remove(@PathVariable("id") Long id) {
+        attachmentService.remove(id);
+        return R.ok("OK");
     }
 }

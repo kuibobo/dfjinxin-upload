@@ -25,6 +25,7 @@
               <th>ID</th>
               <th>文件名</th>
               <th>上传时间</th>
+              <th></th>
               <thead>
               <tbody>
               <#assign attas = datas.objects>
@@ -33,6 +34,7 @@
                   <td>${att.id}</td>
                   <td><a href="/upload${att.diskFilename}">${att.filename}</a></td>
                   <td>${att.createTime?datetime}</td>
+                  <td><button class="btn btn-danger ml-auto" @click="handleRemove(${att.id})"><i class="fa fa-edit"></i> 删除</button></td>
                 </tr>
               </#list>
               </tbody>
@@ -78,6 +80,28 @@
             },
           })
         },
+
+        handleRemove(id) {
+          this.$confirm('确认要删除么', '提示', {
+            confirmButtonText: '确定',
+            cancelButtonText: '取消',
+            type: 'warning'
+          }).then(() => {
+            axios.get('${request.contextPath}/attachment/remove/' + id).then((resp) => {
+              this.$message({
+                message: '删除成功',
+                type: 'success',
+                duration: 1500,
+                onClose: function(){
+                  location.reload();
+                },
+              })
+
+            });
+        }).catch(() => {});
+
+        },
+
       },
     })
   });

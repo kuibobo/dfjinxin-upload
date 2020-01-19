@@ -49,4 +49,11 @@ public class AttachmentServiceImpl extends ServiceImpl<IAttachmentDao, Attachmen
 
         return new DataSet(page);
     }
+
+    @Override
+    public void remove(Long id) {
+        AttachmentEntity entity = this.getById(id);
+        localFileHandler.remove(entity.getDiskFilename());
+        super.removeById(id);
+    }
 }

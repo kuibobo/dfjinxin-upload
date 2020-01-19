@@ -17,6 +17,8 @@ public abstract class FileHandler {
     @NonNull
     public abstract AttachmentEntity upload(@NonNull MultipartFile file, String folder, Long userId, Long objectId);
 
+    public abstract boolean remove(@NonNull String file);
+
     static boolean isImageType(@Nullable MediaType mediaType) {
         return mediaType != null && IMAGE_TYPE.includes(mediaType);
     }
