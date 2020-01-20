@@ -35,10 +35,10 @@ public class AttachmentController {
     @ResponseBody
     public R upload(@RequestParam(name = "file") MultipartFile file,
                   @RequestParam(name = "folder") String folder,
-                  @RequestParam(name = "user_id", defaultValue = "1") Long userId,
                   @RequestParam(name = "object_id", defaultValue = "0") Long objectId) {
         if (null != file && !file.isEmpty()) {
-            AttachmentEntity atta = attachmentService.upload(file, folder, userId, objectId);
+            UserEntity user = (UserEntity) SecurityUtils.getSubject().getPrincipal();
+            AttachmentEntity atta = attachmentService.upload(file, folder, user.getId(), objectId);
             return R.ok("OK").put("file", atta);
         } else {
             return R.error();
