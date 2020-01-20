@@ -10,10 +10,10 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">我的文件路径 <#if user.path??>
-                ${path}/${(user.path)!""}
+            <h3 class="card-title">我的文件路径 <#if currentUser.path??>
+                ${path}/${(currentUser.path)!""}
               <#else>
-                ${path}/${user.name}
+                ${path}/${currentUser.name}
               </#if></h3>
             <div class="card-options">
               <button class="btn btn-primary btn-sm" @click="showUploadDlg = true"><i class="fe fe-arrow-up"></i> 上传</button>

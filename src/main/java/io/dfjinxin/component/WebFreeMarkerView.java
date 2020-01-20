@@ -48,7 +48,7 @@ public class WebFreeMarkerView extends FreeMarkerView {
     protected void exposeHelpers(Map<String, Object> model, HttpServletRequest request) throws Exception {
         AppPathProperties appPathProperties = BeanComponent.getBean(AppProperties.class).getPath();
         model.put("path", appPathProperties.getWorkDir() + appPathProperties.getUpload());
-
+        model.put("uri", request.getRequestURI());
         if (ThreadContext.getSubject() != null) {
             model.put("currentUser", SecurityUtils.getSubject().getPrincipal());
         }
