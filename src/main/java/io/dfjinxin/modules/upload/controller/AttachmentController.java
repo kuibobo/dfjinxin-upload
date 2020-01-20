@@ -16,7 +16,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/attachment")
-public class AttachmentController {
+public class AttachmentController extends AbstractController{
 
     @Autowired
     private IAttachmentService attachmentService;
@@ -27,7 +27,6 @@ public class AttachmentController {
         DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(user.getId(), 1, 20);
 
         models.put("datas", datas);
-        models.put("user", user);
         return "attachment/list";
     }
 

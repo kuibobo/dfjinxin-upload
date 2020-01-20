@@ -1,5 +1,7 @@
 package io.dfjinxin.modules.upload.controller;
 
+import io.dfjinxin.modules.upload.entity.UserEntity;
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,12 @@ public abstract class AbstractController {
 
     @Autowired
     protected HttpServletResponse response;
+
+    protected UserEntity getCurrentUser() {
+        UserEntity userEntity = (UserEntity) SecurityUtils.getSubject().getPrincipal();
+
+        return userEntity;
+    }
 
     protected void addNotices(String msg) {
         addNotices(msg, NoticesType.SUCCESS);

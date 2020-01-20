@@ -39,7 +39,7 @@
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
                                 <span class="avatar" style="background-image: url(${request.contextPath}/assets/tabler/images/avatar.png)"></span>
                                 <span class="ml-2 d-none d-lg-block">
-                                  <span class="text-default">${user.name}</span>
+                                  <span class="text-default">${currentUser.name}</span>
                                   <small class="text-muted d-block mt-1"></small>
                                 </span>
                             </a>
@@ -64,7 +64,7 @@
                             <li class="nav-item">
                                 <a href="${request.contextPath}/attachment/list" class="nav-link active"><i class="fe fe-home"></i> 首页</a>
                             </li>
-                            <#if user.getAdmin()>
+                            <#if currentUser.getAdmin()>
                             <li class="nav-item">
                                 <a href="${request.contextPath}/user/list" class="nav-link"><i class="fe fe-users"></i> 用户列表</a>
                             </li>

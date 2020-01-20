@@ -34,6 +34,6 @@ public class UserController extends AbstractController {
     public String save(@ModelAttribute UserEntity userEntity) {
         userService.saveOrUpdate(userEntity);
         super.addNotices("保存成功");
-        return "redirect:/user/edit/" + userEntity.getId() ;
+        return "redirect:/user/list";
     }
 }

@@ -3,7 +3,11 @@
   <div class="container" id="app">
     <div class="row">
       <div class="col-12">
+
+        ${ShowNotices()}
+
         <div class="card">
+
           <div class="card-header">
             <h3 class="card-title">用户列表</h3>
             <div class="card-options">
