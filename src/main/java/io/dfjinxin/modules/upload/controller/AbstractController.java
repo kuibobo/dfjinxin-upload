@@ -1,6 +1,7 @@
 package io.dfjinxin.modules.upload.controller;
 
 import io.dfjinxin.modules.upload.entity.UserEntity;
+import io.dfjinxin.modules.upload.service.IUserService;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,9 +40,14 @@ public abstract class AbstractController {
     @Autowired
     protected HttpServletResponse response;
 
+    @Autowired
+    private IUserService userService;
+
     protected UserEntity getCurrentUser() {
         UserEntity userEntity = (UserEntity) SecurityUtils.getSubject().getPrincipal();
+        UserEntity dbUser = userService.getUser(userEntity.getId());
 
+        userEntity.setPath(dbUser.getPath());
         return userEntity;
     }
 

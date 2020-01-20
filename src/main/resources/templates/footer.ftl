@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
-				Copyright © 2020 东方金信
+
 			</div>
 		</div>
 	</div>
