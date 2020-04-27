@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="d-flex">
                     <a class="header-brand" href="${request.contextPath}/attachment/list">
-                        <img src="${request.contextPath}/assets/tabler/images/tabler.svg" class="header-brand-img" alt="tabler logo">
+                        文件上传服务
                     </a>
                     <div class="d-flex order-lg-2 ml-auto">
                         <div class="dropdown">
