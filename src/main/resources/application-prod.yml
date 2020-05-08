@@ -41,3 +41,19 @@ system-params:
   soap_url: http://10.10.10.42:18001/portal/intlDataSynchronizedService?wsdl
   cas_server_url_prefix: http://10.10.10.41:17001/cas
   project_url: http://10.10.10.36:8090/
+
+#统一认证
+auth:
+  client:
+    id: testclientid
+    secret: 123456
+  config:
+    need: true
+  login:
+    url: http://auth-frontier.jxwda.bjdx.gov.cn/frontier/auth/toLogin?redirect_url=http%3a%2f%2f10.217.17.116%3a12100%2fdoc-collect%2Floginback
+  logout:
+    url: http://10.217.17.116:8094/cas/logout
+
+# 数研统一认证配置
+auth-url: http://172.25.13.75:31234
+auth-frontier-url: http://auth-frontier.jxwda.bjdx.gov.cn

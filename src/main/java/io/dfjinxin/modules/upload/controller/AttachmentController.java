@@ -6,6 +6,7 @@ import io.dfjinxin.modules.upload.entity.UserEntity;
 import io.dfjinxin.modules.upload.service.IAttachmentService;
 import io.dfjinxin.util.DataSet;
 import io.dfjinxin.util.R;
+import io.dfjinxin.util.ShiroUtils;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,7 @@ public class AttachmentController extends AbstractController{
 
     @GetMapping("/list")
     public String list(Map<String, Object> models) {
-        UserEntity user = (UserEntity) SecurityUtils.getSubject().getPrincipal();
+        UserEntity user = ShiroUtils.getCurrentUserEntity();
         DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(user.getId(), 1, 20);
 
         models.put("datas", datas);
@@ -36,7 +37,7 @@ public class AttachmentController extends AbstractController{
                   @RequestParam(name = "folder") String folder,
                   @RequestParam(name = "object_id", defaultValue = "0") Long objectId) {
         if (null != file && !file.isEmpty()) {
-            UserEntity user = (UserEntity) SecurityUtils.getSubject().getPrincipal();
+            UserEntity user = ShiroUtils.getCurrentUserEntity();
             AttachmentEntity atta = attachmentService.upload(file, folder, user.getId(), objectId);
             return R.ok("OK").put("file", atta);
         } else {

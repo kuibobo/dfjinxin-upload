@@ -4,6 +4,7 @@ import io.dfjinxin.modules.upload.entity.UserEntity;
 import io.dfjinxin.modules.upload.service.IUserService;
 import io.dfjinxin.util.CookieUtil;
 import io.dfjinxin.util.HttpServletUtil;
+import io.dfjinxin.util.ShiroUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.util.ThreadContext;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
@@ -51,14 +52,12 @@ public class WebFreeMarkerView extends FreeMarkerView {
         AppPathProperties appPathProperties = BeanComponent.getBean(AppProperties.class).getPath();
         model.put("path", appPathProperties.getWorkDir() + appPathProperties.getUpload());
         model.put("uri", request.getRequestURI());
-        if (ThreadContext.getSubject() != null) {
-            UserEntity currentUser = (UserEntity) SecurityUtils.getSubject().getPrincipal();
-            UserEntity dbUser = BeanComponent.getBean(IUserService.class).getUser(currentUser.getId());
 
-            currentUser.setPath(dbUser.getPath());
+        UserEntity currentUser = ShiroUtils.getCurrentUserEntity();
+        UserEntity dbUser = BeanComponent.getBean(IUserService.class).getUser(currentUser.getId());
+        currentUser.setPath(dbUser.getPath());
+        model.put("currentUser", currentUser);
 
-            model.put("currentUser", SecurityUtils.getSubject().getPrincipal());
-        }
         cleanNotices();
         super.exposeHelpers(model, request);
     }

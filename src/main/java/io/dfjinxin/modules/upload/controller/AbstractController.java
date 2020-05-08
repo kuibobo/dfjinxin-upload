@@ -2,6 +2,7 @@ package io.dfjinxin.modules.upload.controller;
 
 import io.dfjinxin.modules.upload.entity.UserEntity;
 import io.dfjinxin.modules.upload.service.IUserService;
+import io.dfjinxin.util.ShiroUtils;
 import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,11 +45,7 @@ public abstract class AbstractController {
     private IUserService userService;
 
     protected UserEntity getCurrentUser() {
-        UserEntity userEntity = (UserEntity) SecurityUtils.getSubject().getPrincipal();
-        UserEntity dbUser = userService.getUser(userEntity.getId());
-
-        userEntity.setPath(dbUser.getPath());
-        return userEntity;
+        return ShiroUtils.getCurrentUserEntity();
     }
 
     protected void addNotices(String msg) {

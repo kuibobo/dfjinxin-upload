@@ -3,11 +3,37 @@ package io.dfjinxin.util;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CookieUtil {
+
+    public static void set(HttpServletResponse response,
+                           String name,
+                           String value,
+                           int maxAge) {
+        Cookie cookie = new Cookie(name, value);
+        cookie.setPath("/");
+        cookie.setMaxAge(maxAge);
+        response.addCookie(cookie);
+    }
+
+    public static Cookie get(HttpServletRequest request,
+                             String name) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie: cookies) {
+                if (name.equals(cookie.getName())) {
+                    return cookie;
+                }
+            }
+        }
+
+        return null;
+    }
 
     public static Cookie[] parse(String source) {
         ArrayList<Cookie> list = null;
