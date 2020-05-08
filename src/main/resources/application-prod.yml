@@ -50,7 +50,7 @@ auth:
   config:
     need: true
   login:
-    url: http://auth-frontier.jxwda.bjdx.gov.cn/frontier/auth/toLogin?redirect_url=http%3a%2f%2f10.217.17.116%3a12100%2fdoc-collect%2Floginback
+    url: ${auth-frontier-url}/frontier/auth/toLogin?redirect_url=
   logout:
     url: http://10.217.17.116:8094/cas/logout
 
