@@ -57,8 +57,8 @@ public class WebFreeMarkerView extends FreeMarkerView {
         UserEntity dbUser = BeanComponent.getBean(IUserService.class).getUser(currentUser.getId());
         if (dbUser == null) {
             dbUser = new UserEntity();
-            dbUser.setId(currentUser.getUserId());
-            dbUser.setName(currentUser.getUsername());
+            dbUser.setId(currentUser.getId());
+            dbUser.setName(currentUser.getName());
             BeanComponent.getBean(IUserService.class).saveOrUpdate(dbUser);
         }
         currentUser.setPath(dbUser.getPath());
