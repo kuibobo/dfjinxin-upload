@@ -2,6 +2,8 @@ package io.dfjinxin.modules.upload.controller;
 
 
 import io.dfjinxin.exception.ApplicationException;
+import io.dfjinxin.modules.auth.service.AuthService;
+import io.dfjinxin.modules.auth.utils.CookieUtils;
 import io.dfjinxin.modules.auth.utils.UserThreadLocal;
 import io.dfjinxin.modules.auth.vo.OnlineUser;
 import io.dfjinxin.modules.upload.entity.SysMenuEntity;
@@ -34,6 +36,12 @@ public class MainController {
 
     @Value("${auth.login.url}")
     private String loginUrl;
+
+    @Value("${auth.logout.url}")
+    private String logoutUrl;
+
+    @Autowired
+    private AuthService authService;
 
     @Autowired
     private SysMenuService sysMenuService;
@@ -70,9 +78,11 @@ public class MainController {
     }
 
     @RequestMapping("logout")
-    public String logout() {
-        ShiroUtils.logout();
-        return "redirect:loginsso";
+    public String logout(HttpServletRequest request, HttpServletResponse response) {
+        io.dfjinxin.util.CookieUtil.set(response, Constant.ACCESS_TOKEN, null, 0);
+        io.dfjinxin.util.CookieUtil.set(response, Constant.REFRESH_TOKEN, null, 0);
+        authService.loginOut(request);
+        return "redirect:"+logoutUrl;
     }
 
     @RequestMapping(value = {"/"})
