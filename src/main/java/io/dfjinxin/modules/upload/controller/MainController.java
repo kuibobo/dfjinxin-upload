@@ -93,6 +93,7 @@ public class MainController {
         UserEntity userEntity = sysUserService.getByName(onlineUser.getUsername());
         if (userEntity == null) {
             userEntity = new UserEntity();
+            userEntity.setId(onlineUser.getUserId());
             userEntity.setName(onlineUser.getUsername());
             sysUserService.saveOrUpdate(userEntity);
         }
