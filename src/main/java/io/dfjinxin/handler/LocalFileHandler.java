@@ -70,7 +70,7 @@ public class LocalFileHandler extends FileHandler {
 
         logger.info("Uploading to directory: [{}]", uploadPath.toString());
         try {
-            Files.delete(uploadPath);
+            cn.hutool.core.io.FileUtil.del(uploadPath);
             FileUtil.transferTo(file, uploadPath);
 
             // Build upload result
