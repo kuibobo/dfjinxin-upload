@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Date;
@@ -63,11 +64,13 @@ public class LocalFileHandler extends FileHandler {
         // Build sub file path
         String subFilePath = (subPath + "/" + basename + '.' + extension).replace("//", "/");
 
+        subFilePath = (subPath + "/" + originalBasename).replace("//", "/");
         // Get upload path
         Path uploadPath = Paths.get(properties.getPath().getWorkDir(), properties.getPath().getUpload(), subFilePath);
 
         logger.info("Uploading to directory: [{}]", uploadPath.toString());
         try {
+            Files.delete(uploadPath);
             FileUtil.transferTo(file, uploadPath);
 
             // Build upload result
