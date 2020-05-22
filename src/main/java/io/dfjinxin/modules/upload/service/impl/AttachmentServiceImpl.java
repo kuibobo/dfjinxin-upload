@@ -56,4 +56,9 @@ public class AttachmentServiceImpl extends ServiceImpl<IAttachmentDao, Attachmen
         localFileHandler.remove(entity.getDiskFilename());
         super.removeById(id);
     }
+
+    @Override
+    public void remove(Long userId, String file) {
+        super.remove(new QueryWrapper<AttachmentEntity>().eq("user_id", userId).eq("disk_filename", file));
+    }
 }

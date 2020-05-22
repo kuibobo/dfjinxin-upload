@@ -11,4 +11,6 @@ public interface IAttachmentService {
     DataSet<AttachmentEntity> queryAttachments(Long userId, Integer pageIndex, Integer pageSize);
 
     void remove(Long id);
+
+    void remove(Long userId, String file);
 }

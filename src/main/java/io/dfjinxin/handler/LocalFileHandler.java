@@ -6,6 +6,7 @@ import io.dfjinxin.component.AppProperties;
 import io.dfjinxin.exception.ApplicationException;
 import io.dfjinxin.modules.upload.entity.AttachmentEntity;
 import io.dfjinxin.modules.upload.entity.UserEntity;
+import io.dfjinxin.modules.upload.service.IAttachmentService;
 import io.dfjinxin.modules.upload.service.IUserService;
 import io.dfjinxin.util.FileUtil;
 import org.slf4j.Logger;
@@ -35,6 +36,9 @@ public class LocalFileHandler extends FileHandler {
 
     @Autowired
     private IUserService userService;
+
+    @Autowired
+    private IAttachmentService attachmentService;
 
     @Override
     public AttachmentEntity upload(MultipartFile file, String folder, Long userId, Long objectId) {
@@ -70,7 +74,10 @@ public class LocalFileHandler extends FileHandler {
 
         logger.info("Uploading to directory: [{}]", uploadPath.toString());
         try {
-            cn.hutool.core.io.FileUtil.del(uploadPath);
+            if (cn.hutool.core.io.FileUtil.exist(uploadPath.toString())) {
+                cn.hutool.core.io.FileUtil.del(uploadPath);
+                attachmentService.remove(userId, subFilePath);
+            }
             FileUtil.transferTo(file, uploadPath);
 
             // Build upload result
