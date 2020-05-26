@@ -167,14 +167,14 @@ sup {
 }
 
 a {
-  color: #467fcf;
+  color: #FFF;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:hover {
-  color: #295a9f;
+  color: #FFF;
   text-decoration: underline;
 }
 
@@ -10270,9 +10270,7 @@ body.fixed-header .page {
 }
 
 .header {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  background: #fff;
+  background: #1A3275;
   border-bottom: 1px solid rgba(0, 40, 100, 0.12);
 }
 
@@ -10305,14 +10303,14 @@ body.fixed-header .header {
 }
 
 .header-brand {
-  color: inherit;
+  color: #FFF;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   white-space: nowrap;
   font-weight: 600;
   padding: 0;
   transition: .3s opacity;
-  line-height: 2rem;
+  line-height: 3.5rem;
 }
 
 .header-brand:hover {
@@ -11316,7 +11314,7 @@ button.bg-lime-darkest:focus {
 }
 
 .text-default {
-  color: #495057 !important;
+  color: #FFF !important;
 }
 
 .text-muted-dark {
@@ -11645,7 +11643,7 @@ a.icon:hover {
 
 .nav-tabs .nav-link.active {
   border-color: #467fcf;
-  color: #467fcf;
+  color: #FFF;
   background: transparent;
 }
 
