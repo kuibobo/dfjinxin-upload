@@ -108,7 +108,7 @@ public class MainController {
             sysUserService.saveOrUpdate(userEntity);
         }
         Set<String> paramCode = onlineUser.getPermissions();
-        if (paramCode.size() > 0) {
+        if (paramCode.size() > 0 || true) {
             return "redirect:/attachment/list";
         } else {
             return "noaccess";

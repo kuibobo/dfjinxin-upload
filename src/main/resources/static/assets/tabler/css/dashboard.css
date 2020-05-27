@@ -10307,10 +10307,10 @@ body.fixed-header .header {
   margin-right: 1rem;
   font-size: 1.2rem;
   white-space: nowrap;
-  font-weight: 600;
+  font-weight: 0;
   padding: 0;
   transition: .3s opacity;
-  line-height: 3.5rem;
+  line-height: 3.13rem;
 }
 
 .header-brand:hover {

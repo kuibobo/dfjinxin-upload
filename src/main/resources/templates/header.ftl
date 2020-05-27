@@ -22,7 +22,6 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=20200526" rel="stylesheet" />
     <script src="${request.contextPath}/assets/tabler/js/dashboard.js"></script>
 </head>
 <body class="">
@@ -31,6 +30,9 @@
         <div class="header">
             <div class="container">
                 <div class="d-flex">
+                    <embed src="${request.contextPath}/assets/app/img/logo.svg"
+                           style="margin:14px 10px 0 0"
+                           width="28" height="28" type="image/svg+xml" />
                     <a class="header-brand" href="${request.contextPath}/attachment/list">
                         文件上传服务
                     </a>
@@ -38,7 +40,8 @@
                     <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
                         <div class="container">
                             <div class="row align-items-center">
-
+                                <div class="col-lg-3 ml-auto">
+                                </div>
                                 <div class="col-lg order-lg-first">
                                     <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
                                         <li class="nav-item">
@@ -55,22 +58,21 @@
                         </div>
                     </div>
 
-                    <div class="d-flex order-lg-2 ml-auto">
-
-                        <div class="nav-item d-none d-md-flex">
-                            <span class="avatar" style="background-image: url(${request.contextPath}/assets/tabler/images/avatar.png)"></span>
-                            <span class="ml-2 d-none d-lg-block">
-                                  <span class="text-default">${currentUser.name} </span>
+                    <div class="d-flex order-lg-2 ml-auto" style="margin:10px 0 0 0">
+                        <div class="dropdown">
+                            <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                                <span class="avatar" style="background-size: 80% 80%;background-image: url(${request.contextPath}/assets/app/img/avatar.svg)"></span>
+                                <span class="ml-2 d-none d-lg-block">
+                                  <span class="text-default">${currentUser.name}</span>
+                                  <small class="text-muted d-block mt-1"></small>
                                 </span>
-                        </div>
-
-                        <div class="nav-item d-none d-md-flex">
-                            <a href="${request.contextPath}/logout" >
-                                <i class="dropdown-icon fe fe-log-out"></i> 注销
                             </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                                <a class="dropdown-item" href="${request.contextPath}/logout">
+                                    <i class="dropdown-icon fe fe-log-out"></i> 注销
+                                </a>
+                            </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
