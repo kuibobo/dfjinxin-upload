@@ -22,6 +22,7 @@
         });
     </script>
     <!-- Dashboard Core -->
+    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-527" rel="stylesheet" />
     <script src="${request.contextPath}/assets/tabler/js/dashboard.js"></script>
 </head>
 <body class="">
