@@ -22,14 +22,14 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-527" rel="stylesheet" />
+    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-0601" rel="stylesheet" />
     <script src="${request.contextPath}/assets/tabler/js/dashboard.js"></script>
 </head>
 <body class="">
 <div class="page">
     <div class="page-main">
         <div class="header">
-            <div class="container">
+            <div class="container2" style="padding:0 0 0 20px">
                 <div class="d-flex">
                     <embed src="${request.contextPath}/assets/app/img/logo.svg"
                            style="margin:14px 10px 0 0"
@@ -38,39 +38,39 @@
                         文件上传服务
                     </a>
 
-                    <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
-                        <div class="container">
-                            <div class="row align-items-center">
-                                <div class="col-lg-3 ml-auto">
-                                </div>
-                                <div class="col-lg order-lg-first">
-                                    <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 ml-auto">
+                            </div>
+                            <div class="col-lg order-lg-first">
+                                <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+                                    <li class="nav-item">
+                                        <a href="${request.contextPath}/attachment/list" class="nav-link ${(uri == "/attachment/list")?string("active", "")}"> 首页</a>
+                                    </li>
+                                    <#if currentUser.getAdmin()>
                                         <li class="nav-item">
-                                            <a href="${request.contextPath}/attachment/list" class="nav-link ${(uri == "/attachment/list")?string("active", "")}"><i class="fe fe-home"></i> 首页</a>
+                                            <a href="${request.contextPath}/user/list" class="nav-link ${(uri == "/user/list")?string("active", "")}"> 用户列表</a>
                                         </li>
-                                        <#if currentUser.getAdmin()>
-                                            <li class="nav-item">
-                                                <a href="${request.contextPath}/user/list" class="nav-link ${(uri == "/user/list")?string("active", "")}"><i class="fe fe-users"></i> 用户列表</a>
-                                            </li>
-                                        </#if>
-                                    </ul>
-                                </div>
+                                    </#if>
+                                </ul>
                             </div>
                         </div>
                     </div>
 
+
                     <div class="d-flex order-lg-2 ml-auto" style="margin:10px 0 0 0">
                         <div class="dropdown">
                             <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                                <span class="avatar" style="background-size: 80% 80%;background-image: url(${request.contextPath}/assets/app/img/avatar.svg)"></span>
+                                <span class="avatar" style="background-size: 80% 80%;background-image: url(${request.contextPath}/assets/app/img/avatar.svg); background-color:#fff;"></span>
                                 <span class="ml-2 d-none d-lg-block">
                                   <span class="text-default">${currentUser.name}</span>
                                   <small class="text-muted d-block mt-1"></small>
                                 </span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" style="background-color: #1a3275">
                                 <a class="dropdown-item" href="${request.contextPath}/logout">
-                                    <i class="dropdown-icon fe fe-log-out"></i> 注销
+                                      退出
                                 </a>
                             </div>
                         </div>
