@@ -10306,12 +10306,12 @@ body.fixed-header .header {
 .header-brand {
   color: #FFF;
   margin-right: 1rem;
-  font-size: 1.2rem;
+  font-size: 16px;
   white-space: nowrap;
   font-weight: 700;
   padding: 0;
   transition: .3s opacity;
-  line-height: 3.13rem;
+  line-height: 3.15;
 }
 
 .header-brand:hover {
@@ -11596,7 +11596,8 @@ a.icon:hover {
 
 .nav-link,
 .nav-item {
-  padding: 0 .75rem;
+  line-height: 1.0;
+  padding: 0 0 0 0;
   min-width: 2rem;
   transition: .3s color;
   -webkit-user-select: none;
@@ -11633,22 +11634,18 @@ a.icon:hover {
 .nav-tabs .nav-link {
   border: 0;
   color: inherit;
-  border-bottom: 1px solid transparent;
-  margin-bottom: -1px;
   transition: .3s border-color;
   font-weight: 400;
   padding: 1rem 0;
+  font-size:16px;
 }
 
 .nav-tabs .nav-link:hover:not(.disabled) {
-  border-color: #6e7687;
   color: #6e7687;
 }
 
 .nav-tabs .nav-link.active {
-  border-color: #467fcf;
   color: #FFF;
-  font-size:16px;
   background: transparent;
 }
 
@@ -13535,8 +13532,8 @@ Card alert
 }
 
 .avatar {
-  width: 2rem;
-  height: 2rem;
+  width: 26px;
+  height: 26px;
   line-height: 2rem;
   border-radius: 50%;
   display: inline-block;

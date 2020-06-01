@@ -22,7 +22,7 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-0601a" rel="stylesheet" />
+    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-0601b" rel="stylesheet" />
     <script src="${request.contextPath}/assets/tabler/js/dashboard.js"></script>
 </head>
 <body class="">
@@ -32,12 +32,11 @@
             <div class="container2" style="padding:0 0 0 24px">
                 <div class="d-flex">
                     <embed src="${request.contextPath}/assets/app/img/logo.svg"
-                           style="margin:14px 10px 0 0"
+                           style="margin:10px 10px 0 0"
                            width="28" height="28" type="image/svg+xml" />
                     <a class="header-brand" href="${request.contextPath}/attachment/list">
                         文件上传服务
                     </a>
-
 
                     <div class="container">
                         <div class="row align-items-center">
