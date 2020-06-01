@@ -22,14 +22,14 @@
         });
     </script>
     <!-- Dashboard Core -->
-    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-0601" rel="stylesheet" />
+    <link href="${request.contextPath}/assets/tabler/css/dashboard.css?v=2020-0601a" rel="stylesheet" />
     <script src="${request.contextPath}/assets/tabler/js/dashboard.js"></script>
 </head>
 <body class="">
 <div class="page">
     <div class="page-main">
         <div class="header">
-            <div class="container2" style="padding:0 0 0 20px">
+            <div class="container2" style="padding:0 0 0 24px">
                 <div class="d-flex">
                     <embed src="${request.contextPath}/assets/app/img/logo.svg"
                            style="margin:14px 10px 0 0"
