@@ -13,8 +13,8 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
-    <title>上传</title>
+    <link rel="shortcut icon" type="image/x-icon" href="${request.contextPath}/assets/app/img/favicon.svg" />
+    <title>文件上传</title>
     <script src="${request.contextPath}/assets/tabler/js/require.min.js"></script>
     <script>
         requirejs.config({
