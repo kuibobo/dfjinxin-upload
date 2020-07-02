@@ -20,6 +20,9 @@
             </div>
           </div>
           <div class="card-body">
+            <style>
+              table a {color:#000;}
+            </style>
             <table class="table card-table table-vcenter">
               <thead>
               <th>ID</th>
