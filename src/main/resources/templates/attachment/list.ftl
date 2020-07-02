@@ -4,6 +4,9 @@
 <script src="${request.contextPath}/assets/app/plugins/vue/plugin.js"></script>
 <script src="${request.contextPath}/assets/app/plugins/axios/plugin.js"></script>
 <script src="${request.contextPath}/assets/app/plugins/ELEMENT/plugin.js"></script>
+<style>
+  table a, table a:hover {color:#000;}
+</style>
 <div class="my-3 my-md-5">
   <div class="container" id="app">
     <div class="row">
@@ -20,9 +23,6 @@
             </div>
           </div>
           <div class="card-body">
-            <style>
-              table a {color:#000;}
-            </style>
             <table class="table card-table table-vcenter">
               <thead>
               <th>ID</th>
