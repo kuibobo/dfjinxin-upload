@@ -11641,12 +11641,21 @@ a.icon:hover {
 }
 
 .nav-tabs .nav-link:hover:not(.disabled) {
-  color: #6e7687;
+  color: #FFF;
 }
 
-.nav-tabs .nav-link.active {
+.nav-tabs .active .nav-link{
   color: #FFF;
   background: transparent;
+}
+
+.nav-tabs .nav-item {
+  padding: 0 0 0 10px;
+}
+
+.nav-tabs .active {
+  background-color: #385C91;
+  height:51px;
 }
 
 .nav-tabs .nav-link.disabled {

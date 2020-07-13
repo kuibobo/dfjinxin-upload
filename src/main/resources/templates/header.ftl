@@ -44,12 +44,12 @@
                             </div>
                             <div class="col-lg order-lg-first">
                                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                                    <li class="nav-item">
-                                        <a href="${request.contextPath}/attachment/list" class="nav-link ${(uri == "/attachment/list")?string("active", "")}"> 首页</a>
+                                    <li class="nav-item ${(uri == "/attachment/list")?string("active", "")}">
+                                        <a href="${request.contextPath}/attachment/list" class="nav-link "> 首页</a>
                                     </li>
                                     <#if currentUser.getAdmin()>
-                                        <li class="nav-item">
-                                            <a href="${request.contextPath}/user/list" class="nav-link ${(uri == "/user/list")?string("active", "")}"> 用户列表</a>
+                                        <li class="nav-item ${(uri == "/user/list")?string("active", "")}">
+                                            <a href="${request.contextPath}/user/list" class="nav-link"> 用户列表</a>
                                         </li>
                                     </#if>
                                 </ul>
