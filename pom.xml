@@ -46,6 +46,12 @@
         <profileActive>gongsi</profileActive>
       </properties>
     </profile>
+    <profile>
+      <id>daxingyun</id>
+      <properties>
+        <profileActive>daxingyun</profileActive>
+      </properties>
+    </profile>
   </profiles>
 
   <dependencies>
