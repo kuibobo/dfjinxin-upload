@@ -41,7 +41,7 @@ auth:
   config:
     need: true
   login:
-    url: ${auth-frontier-url}/frontier/auth/toLogin?redirect_url=
+    url: ${auth-frontier-url}/frontier/auth/toLogin?redirect_url=http%3a%2f%2f127.0.0.1%3a8060%2f
   logout:
     url: ttp://123.207.126.81:9302/cas/logout
 

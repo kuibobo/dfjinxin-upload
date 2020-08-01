@@ -87,32 +87,25 @@ public class MainController {
 
     @RequestMapping(value = {"/"})
     public String index(HttpServletRequest request, Map<String, Object> map) {
-//        PortalFilter sso = new PortalFilter();
-//        boolean isLogin = sso.doLogin(request);
-//        if (!isLogin) {
-//            return "redirect:" + systemParams.getPortalUrl();
-//        } else {
-//            return "redirect:/attachment/list";
+//        OnlineUser onlineUser = UserThreadLocal.get();
+//        if (!onlineUser.isIaAuth()) {
+//            return "redirect:" + loginUrl;
 //        }
-
-        OnlineUser onlineUser = UserThreadLocal.get();
-        if (!onlineUser.isIaAuth()) {
-            return "redirect:" + loginUrl;
-        }
-
-        UserEntity userEntity = sysUserService.getByName(onlineUser.getUsername());
-        if (userEntity == null) {
-            userEntity = new UserEntity();
-            userEntity.setId(onlineUser.getUserId());
-            userEntity.setName(onlineUser.getUsername());
-            sysUserService.saveOrUpdate(userEntity);
-        }
-        Set<String> paramCode = onlineUser.getPermissions();
-        if (paramCode.size() > 0 || true) {
-            return "redirect:/attachment/list";
-        } else {
-            return "noaccess";
-        }
+//
+//        UserEntity userEntity = sysUserService.getByName(onlineUser.getUsername());
+//        if (userEntity == null) {
+//            userEntity = new UserEntity();
+//            userEntity.setId(onlineUser.getUserId());
+//            userEntity.setName(onlineUser.getUsername());
+//            sysUserService.saveOrUpdate(userEntity);
+//        }
+//        Set<String> paramCode = onlineUser.getPermissions();
+//        if (paramCode.size() > 0 || true) {
+//            return "redirect:/attachment/list";
+//        } else {
+//            return "noaccess";
+//        }
+        return "redirect:/attachment/list";
     }
 
     @GetMapping("noaccess")

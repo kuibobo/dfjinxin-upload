@@ -24,8 +24,8 @@ public class AttachmentController extends AbstractController{
 
     @GetMapping("/list")
     public String list(Map<String, Object> models) {
-        UserEntity user = ShiroUtils.getCurrentUserEntity();
-        DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(user.getId(), 1, 20);
+//        UserEntity user = ShiroUtils.getCurrentUserEntity();
+        DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(1l, 1, 20);
 
         models.put("datas", datas);
         return "attachment/list";
