@@ -3,9 +3,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.21.9.220:3316/file_upload?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-      username: file_upload
-      password: CMy!#SqCfyc1oDsX
+      url: jdbc:mysql://127.0.0.1:3306/file_upload?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+      username: root
+      password: Dfjx@2020
       initial-size: 10
       max-active: 100
       min-idle: 10
@@ -46,5 +46,5 @@ auth:
     url: http://172.25.117.52:8094/cas/logout
 
 # 数研统一认证配置
-auth-url: http://172.25.117.56:31003
-auth-frontier-url: http://172.25.117.56:31000
+auth-url: http://172.25.111.203:30088
+auth-frontier-url: http://172.25.111.203:30087

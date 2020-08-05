@@ -52,6 +52,12 @@
         <profileActive>daxingyun</profileActive>
       </properties>
     </profile>
+    <profile>
+      <id>hainan</id>
+      <properties>
+        <profileActive>hainan</profileActive>
+      </properties>
+    </profile>
   </profiles>
 
   <dependencies>
@@ -217,6 +223,7 @@
   </pluginRepositories>
 
   <build>
+    <finalName>app</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
