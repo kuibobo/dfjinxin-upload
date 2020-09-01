@@ -27,7 +27,7 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
-        registry.addResourceHandler("/upload/**").addResourceLocations("file:" + pathProperties.getWorkDir() + pathProperties.getUpload() + File.separator);
+        //registry.addResourceHandler("/upload/**").addResourceLocations("file:" + pathProperties.getWorkDir() + pathProperties.getUpload() + File.separator);
         super.addResourceHandlers(registry);
     }
 }

@@ -13,11 +13,7 @@
       <div class="col-12">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">我的文件路径 <#if currentUser.path??>
-                ${path}/${(currentUser.path)!""}
-              <#else>
-                ${path}/${currentUser.name}
-              </#if></h3>
+            <h3 class="card-title">我的文件</h3>
             <div class="card-options">
               <button class="btn btn-primary btn-sm" @click="showUploadDlg = true"><i class="fe fe-arrow-up"></i> 上传</button>
             </div>
@@ -35,7 +31,7 @@
               <#list attas as att>
                 <tr>
                   <td>${att.id}</td>
-                  <td><a href="/upload${att.diskFilename}">${att.filename}</a></td>
+                  <td><a href="javascript:void(0)">${att.filename}</a></td>
                   <td>${att.createTime?datetime}</td>
                   <td><button class="btn btn-danger ml-auto" @click="handleRemove(${att.id})"><i class="fa fa-edit"></i> 删除</button></td>
                 </tr>
@@ -46,7 +42,7 @@
         </div>
         <el-dialog title="文件上传" :visible.sync="showUploadDlg" width="40%">
           <span>
-            <el-upload class="upload-demo" drag multiple :on-success="onUploadSuccess"
+            <el-upload class="upload-demo" drag multiple :on-success="onUploadSuccess" accept=".xls,.xlsx,.csv"
                    action="${request.contextPath}/attachment/upload" :data="postData">
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
