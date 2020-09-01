@@ -24,8 +24,8 @@ public class AttachmentController extends AbstractController{
 
     @GetMapping("/list")
     public String list(Map<String, Object> models) {
-        UserEntity user = ShiroUtils.getCurrentUserEntity();
-        DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(user.getId(), 1, 20);
+        //UserEntity user = ShiroUtils.getCurrentUserEntity();
+        DataSet<AttachmentEntity> datas = attachmentService.queryAttachments(1l, 1, 20);
 
         models.put("datas", datas);
         return "attachment/list";
@@ -37,9 +37,9 @@ public class AttachmentController extends AbstractController{
                   @RequestParam(name = "folder") String folder,
                   @RequestParam(name = "object_id", defaultValue = "0") Long objectId) {
         if (null != file && !file.isEmpty()) {
-            UserEntity user = ShiroUtils.getCurrentUserEntity();
-            AttachmentEntity atta = attachmentService.upload(file, folder, user.getId(), objectId);
-            return R.ok("OK").put("file", atta);
+            //UserEntity user = ShiroUtils.getCurrentUserEntity();
+            AttachmentEntity atta = attachmentService.upload(file, folder, 1l, objectId);
+            return R.ok("OK").put("file", atta).put("url", "/upload" + atta.getDiskFilename());
         } else {
             return R.error();
         }

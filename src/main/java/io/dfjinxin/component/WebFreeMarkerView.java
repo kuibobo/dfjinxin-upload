@@ -53,15 +53,16 @@ public class WebFreeMarkerView extends FreeMarkerView {
         model.put("path", appPathProperties.getWorkDir() + appPathProperties.getUpload());
         model.put("uri", request.getRequestURI());
 
-        UserEntity currentUser = ShiroUtils.getCurrentUserEntity();
-        UserEntity dbUser = BeanComponent.getBean(IUserService.class).getUser(currentUser.getId());
-        if (dbUser == null) {
-            dbUser = new UserEntity();
-            dbUser.setId(currentUser.getId());
-            dbUser.setName(currentUser.getName());
-            BeanComponent.getBean(IUserService.class).saveOrUpdate(dbUser);
-        }
-        currentUser.setPath(dbUser.getPath());
+//        UserEntity currentUser = ShiroUtils.getCurrentUserEntity();
+//        UserEntity dbUser = BeanComponent.getBean(IUserService.class).getUser(currentUser.getId());
+//        if (dbUser == null) {
+//            dbUser = new UserEntity();
+//            dbUser.setId(currentUser.getId());
+//            dbUser.setName(currentUser.getName());
+//            BeanComponent.getBean(IUserService.class).saveOrUpdate(dbUser);
+//        }
+        UserEntity currentUser = new UserEntity();
+        currentUser.setPath("");
         model.put("currentUser", currentUser);
 
         cleanNotices();

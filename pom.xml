@@ -123,12 +123,13 @@
       <version>8.0.18</version>
     </dependency>
 
-    <!--增加CAS包-->
-    <dependency>
-      <groupId>org.jasig.cas.client</groupId>
-      <artifactId>cas-client-core</artifactId>
-      <version>3.5.0</version>
-    </dependency>
+<!--    &lt;!&ndash;增加CAS包&ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>org.jasig.cas.client</groupId>-->
+<!--      <artifactId>cas-client-core</artifactId>-->
+<!--      <version>3.5.0</version>-->
+<!--    </dependency>-->
+
     <dependency>
       <groupId>com.alibaba</groupId>
       <artifactId>fastjson</artifactId>
