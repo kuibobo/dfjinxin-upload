@@ -18,7 +18,7 @@
     <script src="${request.contextPath}/assets/tabler/js/require.min.js"></script>
     <script>
         requirejs.config({
-            baseUrl: '/assets'
+            baseUrl: '${request.contextPath}/assets'
         });
     </script>
     <!-- Dashboard Core -->

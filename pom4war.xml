@@ -13,6 +13,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>dfjinxin-info</name>
   <description>Demo project for Spring Boot</description>
+  <packaging>war</packaging>
 
   <properties>
     <java.version>1.8</java.version>
@@ -74,6 +75,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
 
     <dependency>
@@ -129,12 +136,12 @@
       <version>8.0.18</version>
     </dependency>
 
-<!--    &lt;!&ndash;增加CAS包&ndash;&gt;-->
-<!--    <dependency>-->
-<!--      <groupId>org.jasig.cas.client</groupId>-->
-<!--      <artifactId>cas-client-core</artifactId>-->
-<!--      <version>3.5.0</version>-->
-<!--    </dependency>-->
+    <!--    &lt;!&ndash;增加CAS包&ndash;&gt;-->
+    <!--    <dependency>-->
+    <!--      <groupId>org.jasig.cas.client</groupId>-->
+    <!--      <artifactId>cas-client-core</artifactId>-->
+    <!--      <version>3.5.0</version>-->
+    <!--    </dependency>-->
 
     <dependency>
       <groupId>com.alibaba</groupId>
@@ -152,11 +159,11 @@
       <artifactId>shiro-spring</artifactId>
       <version>1.4.0</version>
     </dependency>
-      <dependency>
-          <groupId>com.google.code.gson</groupId>
-          <artifactId>gson</artifactId>
-          <version>2.8.6</version>
-      </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+      <version>2.8.6</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpcore</artifactId>
@@ -190,17 +197,29 @@
       <artifactId>dom4j</artifactId>
       <version>2.1.0</version>
     </dependency>
-      <dependency>
-          <groupId>org.aspectj</groupId>
-          <artifactId>aspectjweaver</artifactId>
-          <version>1.9.4</version>
-      </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <version>1.9.4</version>
+    </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
       <version>3.9</version>
     </dependency>
 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.el</groupId>
+      <artifactId>javax.el-api</artifactId>
+      <version>3.0.0</version>
+    </dependency>
 
   </dependencies>
 
@@ -230,7 +249,7 @@
   </pluginRepositories>
 
   <build>
-    <finalName>app</finalName>
+    <finalName>upload</finalName>
     <plugins>
       <plugin>
         <groupId>org.springframework.boot</groupId>
