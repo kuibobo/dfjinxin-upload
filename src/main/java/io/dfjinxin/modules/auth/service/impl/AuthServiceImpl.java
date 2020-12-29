@@ -180,7 +180,7 @@ public class AuthServiceImpl implements AuthService {
         String reqUrl = authUrl + UrlEnum.USER_QUERYUSERS_BY_IDS.getUrl();
         OauthUserDTO[] arrays = restTemplate.exchange(reqUrl, HttpMethod.POST, new HttpEntity<>(Arrays.asList(userId)), OauthUserDTO[].class).getBody();
         if(null != arrays && arrays.length > 0){
-            return arrays[0].getUsername();
+            return arrays[0].getName();
         }
         return "无";
     }
@@ -232,7 +232,7 @@ public class AuthServiceImpl implements AuthService {
         user.setUserId("".equals(userId) ? null : Long.valueOf(userId));
         user.setTenantId("".equals(tenantId) ? null : Long.valueOf(tenantId));
         user.setUsername("".equals(username) ? null : username);
-
+        user.setName(this.queryUsersByIds(user.getUserId()));
         return user;
     }
 

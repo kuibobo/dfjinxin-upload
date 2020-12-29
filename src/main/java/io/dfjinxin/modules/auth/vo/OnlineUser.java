@@ -13,6 +13,8 @@ public class OnlineUser implements Serializable {
 
     private String username;
 
+    private String name;
+
     private String token;
 
     private boolean iaAuth = true;
@@ -69,5 +71,13 @@ public class OnlineUser implements Serializable {
 
     public void setPermissions(Set<String> permissions) {
         this.permissions = permissions;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

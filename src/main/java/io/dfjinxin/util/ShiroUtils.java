@@ -36,6 +36,7 @@ public class ShiroUtils {
         UserEntity entity = new UserEntity();
         entity.setId(onlineUser.getUserId());
         entity.setName(onlineUser.getUsername());
+        entity.setNickname(onlineUser.getName());
 
         Set<String> paramCode = onlineUser.getPermissions();
         if (paramCode.size() > 0) {
