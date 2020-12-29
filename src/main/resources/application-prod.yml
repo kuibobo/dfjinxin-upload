@@ -46,5 +46,5 @@ auth:
     url: http://10.217.17.116:8094/cas/logout
 
 # 数研统一认证配置
-auth-url: http://172.25.13.75:31234
+auth-url: http://172.25.13.74:31234
 auth-frontier-url: http://auth-frontier.jxwda.bjdx.gov.cn
