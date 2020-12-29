@@ -32,6 +32,11 @@ spring:
         wall:
           config:
             multi-statement-allow: true
+  servlet:
+    multipart:
+      max-file-size: 1000MB
+      max-request-size: 1000MB
+      enabled: true
 
 #统一认证
 auth:

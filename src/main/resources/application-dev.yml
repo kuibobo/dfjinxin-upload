@@ -39,7 +39,7 @@ auth:
     id: testclientid
     secret: 123456
   config:
-    need: true
+    need: false
   login:
     url: ${auth-frontier-url}/frontier/auth/toLogin?redirect_url=
   logout:
